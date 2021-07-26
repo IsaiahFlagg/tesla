@@ -4,25 +4,29 @@ import Fade from 'react-reveal/Fade'
 
 function Section(props) {
     return (
-        <Wrap bgImage={props.backgroundImg}>
+        <Wrap>
             <Fade bottom>
                 <ItemText>
-                    <h1>{props.title}</h1>
-                    <p>{props.description}</p>
+                    <H1Container>
+                        <h1>{props.title}</h1>
+                    </H1Container>
+                    <DescriptionWrapper>
+                        <p>{props.description}</p>
+                    </DescriptionWrapper>
                 </ItemText>
             </Fade>
             <ButtonsContainer>
-            <Fade>
-                <ButtonGroup>
+                <Fade bottom>
+                    { /* <ButtonGroup>
                     <LeftButton>
                         {props.leftBtnText}
                     </LeftButton>
                     <RightButton>
                         {props.rightBtnText}
                     </RightButton>
-                </ButtonGroup>
-                
-                <DownArrow src="/images/down-arrow.svg" />
+               </ButtonGroup> */}
+
+                    {/* <DownArrow src="/images/down-arrow.svg" /> */}
                 </Fade>
             </ButtonsContainer>
 
@@ -90,4 +94,15 @@ const DownArrow = styled.img`
 const ButtonsContainer = styled.div`
 
 `
-
+const DescriptionWrapper = styled.div`
+    display: flex;
+    maxwidth: 500px;
+    margin-top: 100px;
+    padding: 30px;
+    background: white;
+    width: 1000px;
+`
+const H1Container = styled.div`
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    margin-top: 100px;
+`
